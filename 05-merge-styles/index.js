@@ -2,9 +2,9 @@ const fs = require('fs');
 const path = require('path');
 
 const stylesPath = path.join(__dirname, 'styles');
-const distPath = path.join(__dirname, 'project-dist');
+const distPath = path.join(__dirname, 'project-dist', 'bundle.css');
 
-const writeableFile = fs.createWriteStream(distPath, 'project-dist', 'bundle.css');
+const writeableFile = fs.createWriteStream(distPath);
 
 fs.readdir(stylesPath, { withFileTypes: true }, (error, files) => {
   if (error) console.log(error);
