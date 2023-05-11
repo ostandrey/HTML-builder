@@ -72,15 +72,9 @@ const bundleHtml = () => {
           }
         }
       });
-      console.log(headerData);
     });
-    console.log(headerData);
   });
-
-  console.log(headerData);
 };
-
-bundleHtml();
 
 const bundleCss = () => {
   fs.readdir(stylesPath, { withFileTypes: true }, (error, files) => {
@@ -114,9 +108,10 @@ const createDirectory = () => {
   fs.mkdir(distPath, (error) => {
     if (error) console.log(error);
 
+    bundleHtml();
     bundleCss();
     copyAssetsDir();
   });
 };
 
-// createDirectory();
+createDirectory();
